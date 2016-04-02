@@ -2,6 +2,8 @@
 
 This folder contains introductory programs for undergraduate students and beginning masters students with interest in transportation and freight network analysis to get comfortable with Julia and JuMP.
 
+[LP1.jl], [IP1.jl], and [NLP1.jl] provide examples of a simple linear program, integer program, and nonlinear program solved using JuMP.
+
 Dont forget to add the Graphs package in Julia before running several of the above programs.
 
 [NetworkInput.jl] should provide you with a sample file to read input from file and write output to file. Make sure [NetworkInput.jl] and [AhujaNet.txt] are in the same directory.
@@ -24,7 +26,6 @@ Research Part B, 46(12), 529-543.
 
 The CAB data set PHUB4 is used in this model
 
-[//]:
 
 [NetworkInput.jl]: <https://github.com/avinashu1980/Introduction-to-Julia-JuMP-/blob/master/NetworkInput.jl>
 [AhujaNet.txt]: <https://github.com/avinashu1980/Introduction-to-Julia-JuMP-/blob/master/AhujaNet.txt>
@@ -33,5 +34,8 @@ The CAB data set PHUB4 is used in this model
 [CapFl.jl]: https://github.com/avinashu1980/Introduction-to-Julia-JuMP-/blob/master/CapFL.jl
 [cap41.txt]: https://github.com/avinashu1980/Introduction-to-Julia-JuMP-/blob/master/cap41.txt
 [HubLoc.jl]: https://github.com/avinashu1980/Introduction-to-Julia-JuMP-/blob/master/HubLoc.jl
+[LP1.jl]: https://github.com/avinashu1980/Introduction-to-Julia-JuMP-/blob/master/LP1.jl
+[IP1.jl]: https://github.com/avinashu1980/Introduction-to-Julia-JuMP-/blob/master/IP1.jl
+[NLP1.jl]: https://github.com/avinashu1980/Introduction-to-Julia-JuMP-/blob/master/NLP1.jl
 
 
