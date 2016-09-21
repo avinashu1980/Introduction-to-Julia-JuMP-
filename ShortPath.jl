@@ -6,18 +6,18 @@ function getSP(origin, destination)
 	b[destination] = -1
 	
 	m = Model()
-	@defVar(m, 0<= x[1:num_of_arcs] <=1)
+	@variable(m, 0<= x[1:num_of_arcs] <=1)
 	
-	@setObjective(m, Min, sum{cost[i]*x[i], i in 1:num_of_arcs})
+	@objective(m, Min, sum{cost[i]*x[i], i in 1:num_of_arcs})
 	
 	for i=1:num_of_nodes
-		@addConstraint(m, sum{x[j], j=1:num_of_arcs; start_node[j]==i} - sum{x[j],j=1:num_of_arcs;end_node[j]==i} == b[i])
+		@constraint(m, sum{x[j], j=1:num_of_arcs; start_node[j]==i} - sum{x[j],j=1:num_of_arcs;end_node[j]==i} == b[i])
 	end
 	
 	print(m)
 	solve(m)
-	obj = getObjectiveValue(m)
-	sp = getValue(x)
+	obj = getobjectivevalue(m)
+	sp = getvalue(x)
 	
 	return obj,sp
 end

@@ -44,25 +44,25 @@ end
 close(f)
 	
 
-@defVar(m, 0<= x[1:num_cust,1:num_loc] <= 1)
-@defVar(m, y[1:num_loc], Bin)
-@setObjective(m, Min, sum{vc[i,j]*x[i,j], i in 1:num_cust, j in 1:num_loc} + sum{fc[j]*y[j], j in 1:num_loc}  )
+@variable(m, 0<= x[1:num_cust,1:num_loc] <= 1)
+@variable(m, y[1:num_loc], Bin)
+@objective(m, Min, sum{vc[i,j]*x[i,j], i in 1:num_cust, j in 1:num_loc} + sum{fc[j]*y[j], j in 1:num_loc}  )
 for j=1:num_loc
-	@addConstraint(m, sum{dem[i]*x[i,j], i in 1:num_cust} <= cap[j]*y[j])
+	@constraint(m, sum{dem[i]*x[i,j], i in 1:num_cust} <= cap[j]*y[j])
 end
 for i=1:num_cust
-	@addConstraint(m, sum{x[i,j], j in 1:num_loc} == 1)
+	@constraint(m, sum{x[i,j], j in 1:num_loc} == 1)
 end
 for i=1:num_cust
 	for j=1:num_loc
-		@addConstraint(m,x[i,j] <= y[j])
+		@constraint(m,x[i,j] <= y[j])
 	end
 end
-print(m)
+#print(m)
 solve(m)
-obj = getObjectiveValue(m)
-sp =  getValue(x)
-loc = round(Int,getValue(y))
+obj = getobjectivevalue(m)
+sp =  getvalue(x)
+loc = round(Int,getvalue(y))
 	
 #println(sp)	
 	
