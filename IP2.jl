@@ -9,7 +9,9 @@
 # 8,9
 # 9,-5
 # 10,15
-# Condensed Version
+# Condensed Version Weak Formulation
+# Charles Revelle Facility Siting and Integer-Friendly Programming 
+# European Journal of Operational Research 65 (I 993) 147-158
 
 
 using JuMP
